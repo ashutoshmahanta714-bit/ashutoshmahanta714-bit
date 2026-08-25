@@ -12,7 +12,7 @@
 
 - 🎓 B.Tech student building a career in Data Science and Machine Learning.
 - 📊 Hands-on with data cleaning, exploratory data analysis, statistics, feature selection, and model evaluation.
-- ⚙️ Built an **Industrial Motor Fault Detection** project for predictive-maintenance use cases.
+- ⚙️ Built a simulation-based **Industrial Motor Fault Detection** prototype using ESP32, Random Forest, LSTM, and Flask.
 - 🛰️ Gained DRDO research exposure using **OpenCV** for SWIR sensor image processing.
 - 📚 Improving my skills through practical Python, SQL, data-analysis, and machine-learning work.
 - 💼 Open to entry-level **Data Analyst, Junior Data Scientist, Machine Learning, and Python/SQL analytics roles** in India.
@@ -44,16 +44,19 @@
 
 ## Projects and Experience
 
-### Industrial Motor Fault Detection using Machine Learning
+### [Industrial Motor Fault Detection using Machine Learning](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml)
 
-A predictive-maintenance project focused on identifying motor operating conditions and possible faults from industrial data.
+A simulation-based predictive-maintenance prototype that connects an ESP32 sensor simulator to a Flask machine-learning dashboard.
 
-- Performed data cleaning and exploratory data analysis.
-- Analysed input features and compared classification models.
-- Evaluated model performance and generalisation.
-- Connected model results to the practical goal of reducing unexpected industrial downtime.
+- Simulates Normal, Bearing Fault, Overload, and Imbalance conditions.
+- Sends current, vibration, and temperature readings from ESP32 over Wi-Fi.
+- Uses Random Forest for four-class synthetic fault classification.
+- Includes an experimental LSTM demonstration for synthetic RUL estimation.
+- Documents the limitations of synthetic data and the work needed for real-world validation.
 
-**Tech:** Python • Pandas • NumPy • Scikit-learn • Matplotlib • Seaborn
+**Tech:** ESP32 • Python • Flask • Scikit-learn • TensorFlow • HTML/CSS/JavaScript
+
+> Model results apply only to generated data and do not represent validated performance on physical industrial motors.
 
 ### SWIR Sensor Image Processing — DRDO Research Exposure
 
