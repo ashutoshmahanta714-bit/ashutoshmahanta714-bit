@@ -87,7 +87,7 @@ Applied computer-vision techniques to Short-Wave Infrared sensor imagery.
 
 ## Connect
 
-- Portfolio: [portfolio.ashutoshmahanta.in](https://portfolio.ashutoshmahanta.in)
+- Portfolio: [ashutoshmahanta714-bit.github.io](https://ashutoshmahanta714-bit.github.io)
 - GitHub: [ashutoshmahanta714-bit](https://github.com/ashutoshmahanta714-bit)
 
 ---
