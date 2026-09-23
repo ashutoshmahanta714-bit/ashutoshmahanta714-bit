@@ -1,0 +1,11 @@
+-- Table name: Tips. Create these as separate measures in Power BI Desktop.
+Bills = COUNTROWS('Tips')
+Revenue = SUM('Tips'[Total Bill])
+Tips Collected = SUM('Tips'[Tip])
+Average Bill = DIVIDE([Revenue], [Bills])
+Weighted Tip Rate = DIVIDE([Tips Collected], [Revenue])
+Average Party Size = AVERAGE('Tips'[Party Size])
+Revenue Share = DIVIDE([Revenue], CALCULATE([Revenue], ALLSELECTED('Tips'[Day])))
+-- Format Revenue, Tips Collected, Average Bill as USD.
+-- Format Weighted Tip Rate and Revenue Share as percentages.
+-- Select Tips[Day] → Column tools → Sort by column → Tips[Day Sort].
