@@ -1,6 +1,6 @@
 # Restaurant Revenue & Tipping Analysis
 
-An entry-level data analyst case study using the public [seaborn tips dataset](https://github.com/mwaskom/seaborn-data/blob/master/tips.csv). It combines SQL aggregation with an interactive Streamlit dashboard. The 244 records are a sample of restaurant bills, not sales from YASH Technologies or an operating business.
+An entry-level data analyst case study using the public [seaborn tips dataset](https://github.com/mwaskom/seaborn-data/blob/master/tips.csv). It combines SQL aggregation with an interactive Streamlit dashboard, plus [Power BI](power-bi/README.md) and [Tableau](tableau/README.md) build kits with native formulas and report layouts. These kits are not completed PBIX or TWBX files. The 244 records are a sample of restaurant bills, not sales from YASH Technologies or an operating business.
 
 ## Business questions
 - Which observed days contribute most revenue and bills?
