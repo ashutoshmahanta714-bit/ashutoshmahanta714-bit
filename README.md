@@ -1,6 +1,6 @@
-# Hi, I'm Ashutosh Mahanta 👋
+<h1 align="center">Hi, I'm Ashutosh Mahanta 👋</h1>
 
-**Electrical Engineering · Data Science & Machine Learning · Python & SQL**
+<h3 align="center">Data Science & Machine Learning | Python • SQL | Electrical Engineering</h3>
 
 I explore practical problems through data analysis, machine learning, and applications. My work includes inventory classification, agricultural analytics, and engineering simulations, alongside SWIR image-processing research exposure at SSPL, DRDO.
 
@@ -8,34 +8,58 @@ I explore practical problems through data analysis, machine learning, and applic
 
 [Portfolio](https://ashutoshmahanta714-bit.github.io) · [LinkedIn](https://www.linkedin.com/in/ashutosh-mahanta-ab3203373/) · [All repositories](https://github.com/ashutoshmahanta714-bit?tab=repositories)
 
-## Selected Projects
+---
 
-### [Industrial Motor Fault Detection](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml)
+## 🚀 Selected Projects
+
+### ⚙️ [Industrial Motor Fault Detection](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml)
 Connects an ESP32 sensor simulator to a Flask dashboard for four-class fault classification.  
 **Python · ESP32 · Random Forest · Flask**  
 Simulation prototype using synthetic data; physical-motor validation pending.
 
-### [StockSense — Inventory Management](projects/inventory-management)
+---
+
+### 📦 [StockSense — Inventory Management](projects/inventory-management)
 A Colab-to-Streamlit application with single-product assessment, CSV/Excel uploads, and downloadable predictions.  
 **Python · Pandas · Scikit-learn · Streamlit**  
 In progress. Labels follow a stock-versus-reorder-point rule; future forecasting is unvalidated. [Evaluation](projects/inventory-management/evaluation.json)
 
-### [AgriDecision OS India](https://github.com/ashutoshmahanta714-bit/agridecision-os-india)
+---
+
+### 🌾 [AgriDecision OS India](https://github.com/ashutoshmahanta714-bit/agridecision-os-india)
 Agricultural price-forecasting and risk-analysis prototype with chronological evaluation and uncertainty intervals.  
 **Python · Forecasting · FastAPI · Streamlit**  
 Synthetic demo available; official historical-data evaluation pending.
 
-### [Restaurant Revenue & Tipping Analysis](projects/restaurant-revenue-analysis)
+---
+
+### 📊 [Restaurant Revenue & Tipping Analysis](projects/restaurant-revenue-analysis)
 SQL and Python exploration of 244 public restaurant bills. Saturday has the largest bill total; Sunday has a higher average bill.  
 **SQL · Python · Pandas · Streamlit**  
 Sample-based analytics case study; no causal or profitability claims.
 
-### [Adaptive Load Prioritization](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization)
+---
+
+### ⚡ [Adaptive Load Prioritization](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization)
 Simulation of electrical-load ranking and limited-supply allocation, with an offline demand-forecasting experiment.  
 **Python · Streamlit · Simulation · Random Forest**  
 Research prototype: allocation is deterministic; forecasting uses synthetic data.
 
-## Technical Skills
+---
+
+## 🛠️ Technical Skills
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
+![SQL](https://img.shields.io/badge/SQL-336791?style=flat-square&logo=postgresql&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=flat-square&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/NumPy-013243?style=flat-square&logo=numpy&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=flat-square&logo=scikitlearn&logoColor=white)
+![OpenCV](https://img.shields.io/badge/OpenCV-5C3EE8?style=flat-square&logo=opencv&logoColor=white)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=flat-square&logo=streamlit&logoColor=white)
+![Git](https://img.shields.io/badge/Git-F05032?style=flat-square&logo=git&logoColor=white)
+![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat-square&logo=github&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)
+
 
 - **Data:** Python, SQL, Pandas, NumPy, statistics, EDA, Matplotlib, Seaborn
 - **Machine learning:** Scikit-learn, classification, regression, cross-validation, model evaluation
@@ -53,3 +77,7 @@ Worked with OpenCV-based image preprocessing and analysis, connecting sensor kno
 Building reproducible projects, improving SQL analytics and model evaluation, and moving from demonstration datasets toward independently validated real data.
 
 </details>
+
+---
+
+<p align="center"><em>Open to opportunities to contribute, learn, and grow in Data Science and Analytics.</em></p>
