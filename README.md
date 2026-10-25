@@ -12,7 +12,7 @@
 
 - 🎓 B.Tech student building a career in Data Science and Machine Learning.
 - 📊 Hands-on with data cleaning, exploratory data analysis, statistics, feature selection, and model evaluation.
-- ⚙️ Built a simulation-based **Industrial Motor Fault Detection** prototype using ESP32, Random Forest, LSTM, and Flask.
+- ⚙️ Working on inventory classification, agricultural analytics, electrical-load prioritization, and simulation-based motor fault detection.
 - 🛰️ Gained DRDO research exposure using **OpenCV** for SWIR sensor image processing.
 - 📚 Improving my skills through practical Python, SQL, data-analysis, and machine-learning work.
 - 💼 Open to entry-level **Data Analyst, Junior Data Scientist, Machine Learning, and Python/SQL analytics roles** in India.
@@ -40,23 +40,27 @@
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)
 ![Jupyter](https://img.shields.io/badge/Jupyter-F37626?style=flat-square&logo=jupyter&logoColor=white)
 
+**App frameworks:** Streamlit • Flask • FastAPI
+
 **Core concepts:** Data cleaning • EDA • Statistics • Classification • Regression • Feature selection • Feature engineering • Model evaluation • Image processing
 
-## Projects and Experience
+## Projects
 
-### [Industrial Motor Fault Detection using Machine Learning](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml)
+| Project | What it demonstrates | Current status |
+|---|---|---|
+| [StockSense — Inventory Management](projects/inventory-management) | Colab-to-Streamlit workflow, Logistic Regression, single-product and batch predictions, input validation, and evaluation | In progress; deployable app with five passing tests. Labels follow an explicit stock rule; future forecasting is unvalidated. |
+| [Restaurant Revenue & Tipping Analysis](projects/restaurant-revenue-analysis) | SQL and Python analysis of 244 public restaurant bills, with an interactive Streamlit dashboard | Analytics case study; conclusions limited to the supplied sample |
+| [AgriDecision OS India](https://github.com/ashutoshmahanta714-bit/agridecision-os-india) | Agricultural price forecasting, risk analysis, chronological evaluation, FastAPI, and Streamlit | Prototype; reproducible demo uses synthetic data, official-data evaluation pending |
+| [Industrial Motor Fault Detection](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml) | ESP32 sensor simulation, Random Forest fault classification, Flask dashboard, and an experimental LSTM RUL demonstration | Simulation-based learning prototype; not validated on physical motors |
+| [Adaptive Load Prioritization](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization) | Configurable electrical-load ranking, supply allocation, simulation, and offline Random Forest demand forecasting | Research prototype; ranking is deterministic, forecasting uses synthetic data |
+| [Diabetes Prediction](https://github.com/ashutoshmahanta714-bit/diabetes-prediction-streamlit) | Logistic Regression inference through a Streamlit interface | Learning app; not a clinically validated diagnostic tool |
+| [SwiftReply AI MVP](https://github.com/ashutoshmahanta714-bit/swiftreply-ai-mvp) | Reply-generation interface, server-side Gemini integration, password protection, request limiting, and Docker support | Adapted deployment repair; original attribution preserved |
 
-A simulation-based predictive-maintenance prototype that connects an ESP32 sensor simulator to a Flask machine-learning dashboard.
+### Learning Work
 
-- Simulates Normal, Bearing Fault, Overload, and Imbalance conditions.
-- Sends current, vibration, and temperature readings from ESP32 over Wi-Fi.
-- Uses Random Forest for four-class synthetic fault classification.
-- Includes an experimental LSTM demonstration for synthetic RUL estimation.
-- Documents the limitations of synthetic data and the work needed for real-world validation.
+[Document Intelligence RAG](https://github.com/ashutoshmahanta714-bit/document-intelligence-rag) — studying document ingestion, embeddings, ChromaDB retrieval, and answers with sources using FastAPI and React. This repository is a learning demo, not presented as original portfolio work.
 
-**Tech:** ESP32 • Python • Flask • Scikit-learn • TensorFlow • HTML/CSS/JavaScript
-
-> Model results apply only to generated data and do not represent validated performance on physical industrial motors.
+## Research Experience
 
 ### SWIR Sensor Image Processing — DRDO Research Exposure
 
@@ -89,6 +93,7 @@ Applied computer-vision techniques to Short-Wave Infrared sensor imagery.
 
 - Portfolio: [ashutoshmahanta714-bit.github.io](https://ashutoshmahanta714-bit.github.io)
 - GitHub: [ashutoshmahanta714-bit](https://github.com/ashutoshmahanta714-bit)
+- LinkedIn: [Ashutosh Mahanta](https://www.linkedin.com/in/ashutosh-mahanta-ab3203373/)
 
 ---
 
