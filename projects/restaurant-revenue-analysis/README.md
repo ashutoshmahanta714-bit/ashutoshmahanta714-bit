@@ -2,6 +2,10 @@
 
 An entry-level data analyst case study using the public [seaborn tips dataset](https://github.com/mwaskom/seaborn-data/blob/master/tips.csv). It combines SQL aggregation with an interactive Streamlit dashboard, plus [Power BI](power-bi/README.md) and [Tableau](tableau/README.md) build kits with native formulas and report layouts. These kits are not completed PBIX or TWBX files. The 244 records are a sample of restaurant bills, not sales from YASH Technologies or an operating business.
 
+## Key finding
+
+Saturday contributed the largest observed bill total: **$1778.40 across 87 bills (36.8% of sample revenue)**. Sunday had a higher average bill—**$21.41 versus $20.44 on Saturday**—so Saturday's higher total reflects more observed bills, rather than a higher average spend. These are descriptive sample results, not evidence that changing staffing or promotions will increase revenue.
+
 ## Business questions
 - Which observed days contribute most revenue and bills?
 - How do bill sizes and weighted tip rates differ by segment?
