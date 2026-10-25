@@ -58,3 +58,7 @@ python model.py
 ```
 
 Tests cover held-out sample sizes, the label-rule check, invalid uploads, finite numeric values, matching batch/single inference, equality and zero-demand handling, all four Streamlit pages, and form submission. Uploaded rows are processed in server memory and not saved to disk by the app. Do not upload confidential inventory to an untrusted hosted instance.
+
+## Next steps
+
+Collect timestamped product-level inventory, orders, receipts, and observed stockout outcomes. Define a future prediction horizon and a healthy-stock class, verify each feature is available at prediction time, and evaluate on later dates and unseen products against the reorder-point rule. Add procurement and holding costs before estimating business savings.
