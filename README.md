@@ -4,6 +4,8 @@
 
 I explore practical problems through data analysis, machine learning, and applications. My work includes inventory classification, agricultural analytics, and engineering simulations, alongside SWIR image-processing research exposure at SSPL, DRDO.
 
+**Certification & training:** Gold Category certificate for clearing the Masters Program in Data Science assessment, issued by IT-ITeS Sector Skills Council nasscom through FutureSkills Prime (October 2026). Data Science training at ExcelR.
+
 **Open to entry-level Data Analyst, Junior Data Scientist, and Python/SQL analytics opportunities in India.**
 
 [Portfolio](https://ashutoshmahanta714-bit.github.io) · [LinkedIn](https://www.linkedin.com/in/ashutosh-mahanta-ab3203373/) · [All repositories](https://github.com/ashutoshmahanta714-bit?tab=repositories)
@@ -19,10 +21,10 @@ Simulation prototype using synthetic data; physical-motor validation pending.
 
 ---
 
-### 📦 [StockSense — Inventory Management](projects/inventory-management)
-A Colab-to-Streamlit application with single-product assessment, CSV/Excel uploads, and downloadable predictions.  
-**Python · Pandas · Scikit-learn · Streamlit**  
-In progress. Labels follow a stock-versus-reorder-point rule; future forecasting is unvalidated. [Evaluation](projects/inventory-management/evaluation.json)
+### 📊 [Restaurant Revenue & Tipping Analysis](https://github.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/tree/main/projects/restaurant-revenue-analysis)
+SQL and Python exploration of 244 public restaurant bills. Saturday contributes **$1,778.40 (36.8%)** of the sample's **$4,827.77** bill total. Sunday has the higher average bill: **$21.41 vs $20.44** on Saturday.  
+**SQL · Python · Pandas · Streamlit**  
+Sample-based analytics case study; no causal or profitability claims.
 
 ---
 
@@ -33,17 +35,17 @@ Synthetic demo available; official historical-data evaluation pending.
 
 ---
 
-### 📊 [Restaurant Revenue & Tipping Analysis](projects/restaurant-revenue-analysis)
-SQL and Python exploration of 244 public restaurant bills. Saturday has the largest bill total; Sunday has a higher average bill.  
-**SQL · Python · Pandas · Streamlit**  
-Sample-based analytics case study; no causal or profitability claims.
-
----
-
 ### ⚡ [Adaptive Load Prioritization](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization)
 Simulation of electrical-load ranking and limited-supply allocation, with an offline demand-forecasting experiment.  
 **Python · Streamlit · Simulation · Random Forest**  
 Research prototype: allocation is deterministic; forecasting uses synthetic data.
+
+---
+
+### 📦 [StockSense — Inventory Management](https://github.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/tree/main/projects/inventory-management)
+A Colab-to-Streamlit application using **5,000 inventory records**, with single-product assessment, CSV/Excel uploads, and downloadable predictions.  
+**Python · Pandas · Scikit-learn · Streamlit**  
+In progress. Labels follow a stock-versus-reorder-point rule; future forecasting is unvalidated. [Evaluation](https://github.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/blob/main/projects/inventory-management/evaluation.json)
 
 ---
 
@@ -61,11 +63,8 @@ Research prototype: allocation is deterministic; forecasting uses synthetic data
 ![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=flat-square&logo=googlecolab&logoColor=white)
 
 
-- **Data:** Python, SQL, Pandas, NumPy, statistics, EDA, Matplotlib, Seaborn
-- **Machine learning:** Scikit-learn, classification, regression, cross-validation, model evaluation
-- **Applications:** Streamlit, Flask, FastAPI, REST APIs
-- **Computer vision:** OpenCV, image preprocessing, SWIR imagery
-- **Tools:** Git, GitHub, Jupyter, Google Colab
+**Methods:** EDA, statistics, classification, regression, cross-validation, and model evaluation.  
+**App frameworks:** Streamlit, Flask, FastAPI. **Visualisation:** Matplotlib, Seaborn.
 
 <details>
 <summary>Research background & current focus</summary>
@@ -77,6 +76,10 @@ Worked with OpenCV-based image preprocessing and analysis, connecting sensor kno
 Building reproducible projects, improving SQL analytics and model evaluation, and moving from demonstration datasets toward independently validated real data.
 
 </details>
+
+## 📬 Contact
+
+[Email me](mailto:ashutoshmahanta714@gmail.com) · [Message me on LinkedIn](https://www.linkedin.com/in/ashutosh-mahanta-ab3203373/)
 
 ---
 
