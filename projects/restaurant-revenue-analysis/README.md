@@ -6,6 +6,12 @@ An entry-level data analyst case study using the public [seaborn tips dataset](h
 
 Saturday contributed the largest observed bill total: **$1778.40 across 87 bills (36.8% of sample revenue)**. Sunday had a higher average bill—**$21.41 versus $20.44 on Saturday**—so Saturday's higher total reflects more observed bills, rather than a higher average spend. These are descriptive sample results, not evidence that changing staffing or promotions will increase revenue.
 
+## Result figure
+
+![Observed revenue and average bill by day](assets/revenue-analysis.png)
+
+Generated from the committed 244-row CSV. This is an analysis figure, not a dashboard screenshot.
+
 ## Business questions
 - Which observed days contribute most revenue and bills?
 - How do bill sizes and weighted tip rates differ by segment?

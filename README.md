@@ -19,12 +19,28 @@ Connects an ESP32 sensor simulator to a Flask dashboard for four-class fault cla
 **Python · ESP32 · Random Forest · Flask**  
 Simulation prototype using synthetic data; physical-motor validation pending.
 
+<details>
+<summary>View synthetic classifier evaluation</summary>
+
+![Motor fault classifier evaluation on synthetic data](https://raw.githubusercontent.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml/main/assets/synthetic-confusion-matrix.png)
+
+799/800 synthetic test samples classified correctly; not physical-motor validation.
+
+</details>
+
 ---
 
 ### 📊 [Restaurant Revenue & Tipping Analysis](https://github.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/tree/main/projects/restaurant-revenue-analysis)
 SQL and Python exploration of 244 public restaurant bills. Saturday contributes **$1,778.40 (36.8%)** of the sample's **$4,827.77** bill total. Sunday has the higher average bill: **$21.41 vs $20.44** on Saturday.  
 **SQL · Python · Pandas · Streamlit**  
 Sample-based analytics case study; no causal or profitability claims.
+
+<details>
+<summary>View restaurant analysis figure</summary>
+
+![Restaurant revenue and average bills](https://raw.githubusercontent.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/main/projects/restaurant-revenue-analysis/assets/revenue-analysis.png)
+
+</details>
 
 ---
 
@@ -46,6 +62,13 @@ Research prototype: allocation is deterministic; forecasting uses synthetic data
 A Colab-to-Streamlit application using **5,000 inventory records**, with single-product assessment, CSV/Excel uploads, and downloadable predictions.  
 **Python · Pandas · Scikit-learn · Streamlit**  
 In progress. Labels follow a stock-versus-reorder-point rule; future forecasting is unvalidated. [Evaluation](https://github.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/blob/main/projects/inventory-management/evaluation.json)
+
+<details>
+<summary>View StockSense evaluation figure</summary>
+
+![StockSense confusion matrix](https://raw.githubusercontent.com/ashutoshmahanta714-bit/ashutoshmahanta714-bit/main/projects/inventory-management/assets/model-evaluation.png)
+
+</details>
 
 ---
 

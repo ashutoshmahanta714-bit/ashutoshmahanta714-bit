@@ -2,6 +2,12 @@
 
 A deployable Streamlit adaptation of Ashutosh Mahanta's existing Google Colab inventory-management project.
 
+## Evaluation figure
+
+![StockSense held-out confusion matrix](assets/model-evaluation.png)
+
+Computed from the committed evaluation report. This is a result figure, not a dashboard screenshot. The direct reorder-point rule scores 100% on the same holdout.
+
 ## Run locally
 
 Use Python 3.12. From this directory:
