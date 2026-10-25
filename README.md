@@ -44,21 +44,93 @@
 
 **Core concepts:** Data cleaning • EDA • Statistics • Classification • Regression • Feature selection • Feature engineering • Model evaluation • Image processing
 
-## Projects
+## Data Science & Analytics Projects
 
-| Project | What it demonstrates | Current status |
-|---|---|---|
-| [StockSense — Inventory Management](projects/inventory-management) | Colab-to-Streamlit workflow, Logistic Regression, single-product and batch predictions, input validation, and evaluation | In progress; deployable app with five passing tests. Labels follow an explicit stock rule; future forecasting is unvalidated. |
-| [Restaurant Revenue & Tipping Analysis](projects/restaurant-revenue-analysis) | SQL and Python analysis of 244 public restaurant bills, with an interactive Streamlit dashboard | Analytics case study; conclusions limited to the supplied sample |
-| [AgriDecision OS India](https://github.com/ashutoshmahanta714-bit/agridecision-os-india) | Agricultural price forecasting, risk analysis, chronological evaluation, FastAPI, and Streamlit | Prototype; reproducible demo uses synthetic data, official-data evaluation pending |
-| [Industrial Motor Fault Detection](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml) | ESP32 sensor simulation, Random Forest fault classification, Flask dashboard, and an experimental LSTM RUL demonstration | Simulation-based learning prototype; not validated on physical motors |
-| [Adaptive Load Prioritization](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization) | Configurable electrical-load ranking, supply allocation, simulation, and offline Random Forest demand forecasting | Research prototype; ranking is deterministic, forecasting uses synthetic data |
-| [Diabetes Prediction](https://github.com/ashutoshmahanta714-bit/diabetes-prediction-streamlit) | Logistic Regression inference through a Streamlit interface | Learning app; not a clinically validated diagnostic tool |
-| [SwiftReply AI MVP](https://github.com/ashutoshmahanta714-bit/swiftreply-ai-mvp) | Reply-generation interface, server-side Gemini integration, password protection, request limiting, and Docker support | Adapted deployment repair; original attribution preserved |
+### 📦 StockSense — Inventory Management
+Classifies inventory records as stockout or overstock, with single-product assessment, CSV/Excel batch uploads, and downloadable predictions.
 
-### Learning Work
+**Python · Pandas · Scikit-learn · Streamlit**  
+In progress · Adapted from my Colab workflow · Deployable app
 
-[Document Intelligence RAG](https://github.com/ashutoshmahanta714-bit/document-intelligence-rag) — studying document ingestion, embeddings, ChromaDB retrieval, and answers with sources using FastAPI and React. This repository is a learning demo, not presented as original portfolio work.
+[Code & deployment guide](projects/inventory-management) · [Evaluation results](projects/inventory-management/evaluation.json)
+
+<sub>The supplied labels follow a stock-versus-reorder-point rule. Future stockout forecasting has not been validated.</sub>
+
+---
+
+### 📊 Restaurant Revenue & Tipping Analysis
+Explores revenue, bill size, and tipping patterns across 244 public restaurant bills using SQL and an interactive dashboard.
+
+**SQL · Python · Pandas · Streamlit**  
+Analytics case study · Findings limited to the supplied sample
+
+[Explore the analysis](projects/restaurant-revenue-analysis)
+
+---
+
+### 🌾 AgriDecision OS India
+An agricultural price-forecasting and risk-analysis prototype with chronological evaluation, uncertainty intervals, and a dashboard.
+
+**Python · Forecasting · FastAPI · Streamlit**  
+Prototype · Synthetic demo available · Official-data evaluation pending
+
+[View repository](https://github.com/ashutoshmahanta714-bit/agridecision-os-india)
+
+---
+
+## Engineering & Machine Learning Projects
+
+### ⚙️ Industrial Motor Fault Detection
+Connects an ESP32 sensor simulator to a Flask dashboard for four-class fault classification, with an experimental RUL demonstration.
+
+**ESP32 · Python · Random Forest · LSTM · Flask**  
+Simulation prototype · Synthetic data · Physical-motor validation pending
+
+[View repository](https://github.com/ashutoshmahanta714-bit/industrial-motor-fault-detection-ml)
+
+---
+
+### ⚡ Adaptive Load Prioritization
+Ranks electrical loads and allocates limited supply through configurable priorities. Includes a simulation and an offline demand-forecasting experiment.
+
+**Python · Streamlit · Simulation · Random Forest**  
+Research prototype · Deterministic allocation · Synthetic forecast data
+
+[View repository](https://github.com/ashutoshmahanta714-bit/ai-load-prioritization)
+
+---
+
+## Applications & Learning Work
+
+### 🩺 Diabetes Prediction
+A Streamlit learning app demonstrating Logistic Regression inference from entered health measurements.
+
+**Python · Logistic Regression · Streamlit**  
+Learning app · Not a clinically validated diagnostic tool
+
+[View repository](https://github.com/ashutoshmahanta714-bit/diabetes-prediction-streamlit)
+
+---
+
+### 💬 SwiftReply AI MVP
+An adapted reply-generation application with server-side Gemini integration, password protection, request limiting, and Docker support.
+
+**Node.js · Gemini API · Docker**  
+Deployment repair · Original attribution preserved
+
+[View attributed repository](https://github.com/ashutoshmahanta714-bit/swiftreply-ai-mvp)
+
+---
+
+### 📄 Document Intelligence RAG
+Studying document ingestion, embeddings, retrieval, and answers with sources through a full-stack RAG demo.
+
+**FastAPI · React · ChromaDB · OpenAI API**  
+Learning demo · Not presented as original portfolio work
+
+[View learning repository](https://github.com/ashutoshmahanta714-bit/document-intelligence-rag)
+
+---
 
 ## Research Experience
 
