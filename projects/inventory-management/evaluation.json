@@ -1,0 +1,66 @@
+{
+  "rows": 5000,
+  "training_rows": 4000,
+  "test_rows": 1000,
+  "seed": 100,
+  "selected_model": "Tuned Logistic Regression",
+  "selection_reason": "Retains the model preferred in the source Colab notebook; hyperparameters selected using training-only cross-validation.",
+  "best_parameters": {
+    "model__C": 100,
+    "model__solver": "lbfgs"
+  },
+  "cv_stockout_f1": 0.9709436859963174,
+  "heldout_test": {
+    "accuracy": 0.996,
+    "stockout_precision": 0.9578947368421052,
+    "stockout_recall": 1.0,
+    "stockout_f1": 0.978494623655914,
+    "confusion_matrix": [
+      [
+        905,
+        4
+      ],
+      [
+        0,
+        91
+      ]
+    ]
+  },
+  "direct_rule": {
+    "accuracy": 1.0,
+    "stockout_precision": 1.0,
+    "stockout_recall": 1.0,
+    "stockout_f1": 1.0,
+    "confusion_matrix": [
+      [
+        909,
+        0
+      ],
+      [
+        0,
+        91
+      ]
+    ]
+  },
+  "majority_baseline": {
+    "accuracy": 0.909,
+    "stockout_precision": 0.0,
+    "stockout_recall": 0.0,
+    "stockout_f1": 0.0,
+    "confusion_matrix": [
+      [
+        909,
+        0
+      ],
+      [
+        91,
+        0
+      ]
+    ]
+  },
+  "label_rule_agreement": 1.0,
+  "test_labels": {
+    "overstock": 909,
+    "stockout": 91
+  }
+}
