@@ -2,15 +2,6 @@
 from pathlib import Path
 import numpy as np
 import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.preprocessing import OrdinalEncoder, StandardScaler
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.svm import SVC
-from sklearn.model_selection import train_test_split, GridSearchCV, StratifiedKFold
-from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
 ROOT = Path(__file__).resolve().parent
 NUMERIC = ['current_stock', 'avg_daily_demand', 'lead_time_days', 'reorder_point',
@@ -43,49 +34,44 @@ def validate(frame):
             raise ValueError(f'{col}: allowed values are {", ".join(allowed)}.')
     return x
 
-def preprocessing():
-    # Fixed category order matches OrdinalEncoder's alphabetical order in Colab.
-    return ColumnTransformer([
-        ('numeric', 'passthrough', NUMERIC),
-        ('category', OrdinalEncoder(categories=list(CATEGORIES.values())), list(CATEGORIES))
-    ])
+class DeploymentModel:
+    """Apply the notebook's saved encoder before its scaling/model pipeline."""
+    def __init__(self, pipeline, encoder, labels, columns):
+        self.pipeline = pipeline
+        self.encoder = encoder
+        self.labels = labels
+        self.columns = columns
+        self.classes_ = pipeline.classes_
 
-def make_pipeline(estimator, scale=True):
-    steps = [('encoding', preprocessing())]
-    if scale:
-        steps.append(('scaling', StandardScaler()))
-    return Pipeline(steps + [('model', estimator)])
+    def _encode(self, frame):
+        features = validate(frame).loc[:, self.columns].copy()
+        cat_cols = self.encoder.feature_names_in_.tolist()
+        features[cat_cols] = self.encoder.transform(features[cat_cols])
+        return features
 
-def metrics(y, pred):
-    return {'accuracy': float(accuracy_score(y, pred)),
-            'stockout_precision': float(precision_score(y, pred, zero_division=0)),
-            'stockout_recall': float(recall_score(y, pred, zero_division=0)),
-            'stockout_f1': float(f1_score(y, pred, zero_division=0)),
-            'confusion_matrix': confusion_matrix(y, pred, labels=[0,1]).tolist()}
+    def predict(self, frame):
+        return self.pipeline.predict(self._encode(frame))
 
-def train():
-    data = load_data()
-    x = validate(data)
-    y = (data.stock_status == 'stockout').astype(int)
-    xtr, xte, ytr, yte = train_test_split(x, y, test_size=.2, random_state=100, stratify=y)
-    cv = StratifiedKFold(n_splits=5, shuffle=False)
-    search = GridSearchCV(make_pipeline(LogisticRegression(class_weight='balanced',
-                            max_iter=1000, random_state=42)),
-                          {'model__C': [.01,.1,1,10,100], 'model__solver': ['lbfgs','liblinear']},
-                          scoring='f1', cv=cv, n_jobs=1)
-    search.fit(xtr,ytr)
-    model = search.best_estimator_
-    pred = model.predict(xte)
-    rule = (xte.current_stock < xte.reorder_point).astype(int)
-    report = {'rows':len(data), 'training_rows':len(xtr), 'test_rows':len(xte),
-              'seed':100, 'selected_model':'Tuned Logistic Regression',
-              'selection_reason':'Retains the model preferred in the source Colab notebook; hyperparameters selected using training-only cross-validation.',
-              'best_parameters':search.best_params_, 'cv_stockout_f1':float(search.best_score_),
-              'heldout_test':metrics(yte,pred), 'direct_rule':metrics(yte,rule),
-              'majority_baseline':metrics(yte,np.full(len(yte),int(ytr.mode().iloc[0]))),
-              'label_rule_agreement':float(((x.current_stock < x.reorder_point).astype(int)==y).mean()),
-              'test_labels':{'overstock':int((yte==0).sum()),'stockout':int((yte==1).sum())}}
-    return model, report
+    def predict_proba(self, frame):
+        return self.pipeline.predict_proba(self._encode(frame))
+
+
+def load_deployment():
+    """Load fitted artifacts and their held-out evaluation; never train at startup."""
+    import json
+    import pickle
+    objects = []
+    for name in ['best_lr_model.pkl', 'ordinal_encoder.pkl', 'label_encoder.pkl', 'feature_columns.pkl']:
+        with (ROOT / name).open('rb') as stream:
+            objects.append(pickle.load(stream))
+    pipeline, encoder, labels, columns = objects
+    if columns != FEATURES or labels.classes_.tolist() != ['overstock', 'stockout']:
+        raise ValueError('Model artifact schema or label mapping is incompatible.')
+    for field, categories in zip(encoder.feature_names_in_, encoder.categories_):
+        if categories.tolist() != CATEGORIES[field]:
+            raise ValueError(f'Category mapping mismatch for {field}.')
+    report = json.loads((ROOT / 'evaluation.json').read_text())
+    return DeploymentModel(pipeline, encoder, labels, columns), report
 
 def predict(model, frame):
     x = validate(frame)
@@ -103,5 +89,6 @@ def predict(model, frame):
 
 if __name__ == '__main__':
     import json
-    _, report = train()
+    _, report = load_deployment()
     print(json.dumps(report, indent=2))
+

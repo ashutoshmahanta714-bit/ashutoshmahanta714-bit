@@ -1,0 +1,11 @@
+current_stock,avg_daily_demand,lead_time_days,reorder_point,sales_last_30_days,stock_turnover_ratio,forecast_error,season,item_category,supplier_reliability
+308,47.62,6.07,407.38,1186.09,2.92,-2.01,off-peak,non-essential,low
+327,50.77,8.65,391.0,1656.89,4.44,-15.47,off-peak,essential,high
+394,55.38,5.92,437.2,1639.94,3.69,-4.69,off-peak,essential,high
+377,73.94,6.01,411.11,1457.35,2.59,-0.48,peak,non-essential,high
+352,58.28,5.34,359.69,1255.92,2.77,-4.28,off-peak,non-essential,low
+549,45.76,5.64,342.83,1604.49,4.17,-9.9,peak,essential,low
+486,45.47,6.39,348.37,1585.0,4.01,-5.27,peak,non-essential,high
+564,32.04,5.81,353.21,1219.04,3.57,-2.94,off-peak,non-essential,high
+652,46.7,7.22,397.34,1673.88,4.0,0.75,off-peak,essential,low
+476,57.33,9.39,312.64,1052.98,4.49,5.12,peak,essential,high

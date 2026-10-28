@@ -2,7 +2,7 @@ from pathlib import Path
 import json
 import pandas as pd
 import streamlit as st
-from model import load_data, train, predict, NUMERIC, CATEGORIES, FEATURES
+from model import load_data, load_deployment, predict, NUMERIC, CATEGORIES, FEATURES
 
 st.set_page_config(page_title='StockSense | Inventory Risk', page_icon='📦', layout='wide')
 st.title('StockSense')
@@ -11,15 +11,15 @@ st.info('Learning prototype: classifies stockout versus overstock in the supplie
         'It does not forecast future stockouts or identify a healthy-stock class.')
 
 @st.cache_resource
-def trained():
-    return train()
+def deployed():
+    return load_deployment()
 
 @st.cache_data
 def dataset():
     return load_data()
 
-with st.spinner('Preparing the inventory model…'):
-    model, report = trained()
+with st.spinner('Loading the saved inventory model…'):
+    model, report = deployed()
 data = dataset()
 page = st.sidebar.radio('Workspace', ['Overview', 'Single product', 'Batch predictions', 'Model evaluation'])
 st.sidebar.caption('Built from the existing Google Colab workflow. No account or API key required.')
@@ -95,7 +95,7 @@ elif page == 'Batch predictions':
 else:
     st.subheader('Evaluation and limitations')
     st.write('80/20 stratified split, random_state=100. Logistic Regression tuning uses five-fold '
-             'cross-validation on training data only. Encoding and scaling live inside the pipeline.')
+             'cross-validation on training data only. The saved category encoder runs before the pipeline, which contains scaling.')
     rows = []
     for name,key in [('Logistic Regression','heldout_test'),('Direct stock rule','direct_rule'),('Majority baseline','majority_baseline')]:
         rows.append({'Model':name,**{k:v for k,v in report[key].items() if k!='confusion_matrix'}})
@@ -109,3 +109,4 @@ else:
                'observed future outcomes. Operational forecasting and cost savings have not been validated.')
     st.json(report)
     st.download_button('Download evaluation report',json.dumps(report,indent=2),'evaluation.json','application/json')
+

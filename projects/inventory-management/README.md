@@ -27,7 +27,7 @@ From the repository root, use `python -m streamlit run projects/inventory-manage
 4. Set entrypoint to `projects/inventory-management/app.py`.
 5. Under Advanced settings, select Python 3.12, then deploy.
 
-Dependencies are declared beside the entrypoint. No secrets or external APIs are required. Training is small and cached per server process; the first visit may take a few seconds. Cloud deployment has not been performed or verified by this repository upload.
+Dependencies are declared beside the entrypoint. No secrets or external APIs are required. The app loads the four committed fitted PKL files and caches them per server process. It does not train on startup. Cloud deployment has not been performed or verified by this repository upload.
 
 ## Features
 
@@ -42,7 +42,7 @@ Dependencies are declared beside the entrypoint. No secrets or external APIs are
 
 Source: `Inventory_Management_Previous_Code.ipynb`, modified 20 October 2026, in the user's Colab Notebooks folder. Also inspected Inventory_Management_1 and Inventory_Management_2. The source compares Logistic Regression, Decision Tree, Random Forest, and SVC and prefers tuned Logistic Regression. The app retains that model, balanced class weights, C/solver grid, five-fold stockout-F1 scoring, and the 80/20 stratified split with seed 100.
 
-Encoding and scaling are now inside one sklearn pipeline so validation folds and inference use the same transformations without preprocessing leakage. The app does not repeat the source's large tree/forest/SVC searches at startup. The source notebook retains those experiments. Notebook plotting requires matplotlib and seaborn in addition to app requirements.
+The saved OrdinalEncoder is fitted on the training split, matching the supplied notebook. The saved Logistic Regression pipeline contains StandardScaler, fitted inside each training cross-validation fold; inference applies the encoder once and scaling once. The app does not repeat the source's large tree/forest/SVC searches at startup. The source notebook retains those experiments. Notebook plotting requires matplotlib and seaborn in addition to app requirements.
 
 ## Dataset and interpretation
 
@@ -60,7 +60,7 @@ The 1,000-row holdout gives Logistic Regression 99.60% accuracy, 100% stockout r
 
 ```bash
 python -m unittest test_app -v
-python model.py
+python model.py  # Read the saved evaluation; no training
 ```
 
 Tests cover held-out sample sizes, the label-rule check, invalid uploads, finite numeric values, matching batch/single inference, equality and zero-demand handling, all four Streamlit pages, and form submission. Uploaded rows are processed in server memory and not saved to disk by the app. Do not upload confidential inventory to an untrusted hosted instance.
@@ -68,3 +68,25 @@ Tests cover held-out sample sizes, the label-rule check, invalid uploads, finite
 ## Next steps
 
 Collect timestamped product-level inventory, orders, receipts, and observed stockout outcomes. Define a future prediction horizon and a healthy-stock class, verify each feature is available at prediction time, and evaluate on later dates and unseen products against the reorder-point rule. Add procurement and holding costs before estimating business savings.
+
+
+## Saved deployment files
+
+| File | Purpose |
+|---|---|
+| `best_lr_model.pkl` | Fitted tuned Logistic Regression pipeline, including StandardScaler |
+| `ordinal_encoder.pkl` | Fitted category-to-number mappings |
+| `label_encoder.pkl` | Maps 0 to overstock and 1 to stockout |
+| `feature_columns.pkl` | Preserves the ten input columns in training order |
+
+No separate scaler PKL is needed. Use these four files together. They were generated using scikit-learn 1.8.0, pinned in requirements.txt. Only load trusted pickle files.
+
+`model.py` validates inputs, loads the four files, and supports predictions for the Streamlit interface. `train_model.py` recreates the artifacts offline from the supplied Excel dataset. `evaluation.json` provides the app's evaluation table; `validation_results.json` records export metrics and reload verification. The data, notebook and evaluation figure remain available as supporting project materials.
+
+Recreate the deployment artifacts from this directory:
+
+```bash
+python train_model.py "stock_risk_prediction_dataset (1).xlsx"
+```
+
+The export uses the original 4,000-row training split. Predictions after reloading match all 1,000 held-out predictions. On the full 5,000 rows (including training data), the model predicts 480 stockouts and 4,520 overstocks; actual labels are 457 and 4,543. Full-dataset counts are not independent evaluation.
